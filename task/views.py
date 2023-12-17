@@ -34,7 +34,7 @@ class signupapi(APIView):
         if request.user.is_authenticated:
             return Response({'response':'Already logged in'},status=status.HTTP_401_UNAUTHORIZED)
         else:
-            return Response({'response':'Enter details'},status=status.HTTP_200_OK)
+            return Response({'response':'Enter first_name, last_name, username and password'},status=status.HTTP_200_OK)
     
     def post(self,request):
         if request.user.is_authenticated:
