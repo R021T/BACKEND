@@ -99,7 +99,7 @@ class taskapi(APIView):
 class expiredapi(APIView):
 
     authentication_classes=[JWTAuthentication]
-    parser_classes=[IsAuthenticated]
+    permission_classes=[IsAuthenticated]
 
     def get(self,request):
         name=User.objects.get(username=request.user.username)
